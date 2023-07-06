@@ -1,0 +1,141 @@
+@import "mixins";
+
+.edit {
+  width: 100%;
+  color: $main-color;
+  margin: 120px 0 50px;
+  @include flex($dir: column);
+
+  @include respond(tablet) {
+    margin-top: 167px;
+  }
+
+  @include respond(laptop) {
+    margin-top: 100px;
+  }
+
+  &__form {
+    @include flex($dir: column);
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 50px 0;
+    letter-spacing: 2px;
+    text-align: center;
+
+    &--closest {
+      margin-bottom: 0;
+    }
+  }
+
+  &__input {
+    margin: 5px 0;
+    width: 100%;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 5px;
+    opacity: 0.5;
+
+    @include respond(tablet) {
+      width: 80%;
+    }
+
+    @include respond(laptop) {
+      width: 60%;
+    }
+
+    &:focus {
+      opacity: 1;
+    }
+
+    &--textarea {
+      min-height: 100px;
+    }
+
+    &--xxl{
+      min-height: 500px;
+    }
+
+    &--checkbox {
+      width: 20px;
+    }
+  }
+
+  &__photo {
+    @include flex($dir: column);
+    width: 100%;
+  }
+
+  &__label {
+    @include respond(laptop) {
+      flex-basis: 10%;
+      margin-right: 20px;
+      text-align: right;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+
+    &--sm {
+      margin-top: 5px;
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    &--lowercase{
+      text-transform: lowercase;
+    }
+
+    &--capitalize{
+      text-transform: capitalize;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    @include flex($dir: column);
+
+    @include respond(laptop) {
+      @include flex()
+    }
+
+    &--sm {
+      @include respond(laptop) {
+        width: 50%;
+      }
+    }
+
+    &--column {
+      @include respond(laptop) {
+        @include flex($dir: column);
+      }
+    }
+  }
+
+  &__error {
+    color: #ff0000;
+    @include respond(tablet) {
+      text-align: center;
+    }
+  }
+
+  &__block {
+    width: 100%;
+  }
+
+  &__description {
+    font-weight: 500;
+    color: $light-text-color;
+    margin: 5px;
+    text-align: center;
+  }
+}

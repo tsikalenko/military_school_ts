@@ -1,0 +1,97 @@
+@import "./src/utils/styles/colors";
+@import "./src/utils/styles/mixins";
+
+.footer {
+  background-color: $bg-footer-color;
+  width: 100%;
+
+  &__container {
+    padding: 30px 10px 20px;
+    color: $main-color;
+    @include flex($dir: column);
+    position: relative;
+
+    @include respond(laptop) {
+      @include flex($justify: space-around);
+    }
+  }
+
+  &__address {
+    margin: 20px 0 10px;
+    text-align: center;
+  }
+
+  &__contacts {
+    @include flex();
+    margin: 10px 0;
+  }
+
+  &__icon {
+    font-size: 25px;
+    margin: 5px;
+
+    &--accent {
+      color: $accent-color
+    }
+  }
+
+  &__nav {
+    margin: 10px 0 0;
+  }
+
+  .nav {
+    @include flex($dir: column);
+
+    @include respond(tablet) {
+      @include flex();
+    }
+
+    @include respond(laptop) {
+      @include flex($dir: column);
+    }
+
+    &__link {
+      &:hover {
+        border-bottom: 2px solid $accent-color;
+      }
+    }
+
+    &__item {
+      margin: 7px 0;
+
+      @include respond(tablet) {
+        margin: 0 10px;
+
+      }
+
+      @include respond(laptop) {
+        margin: 7px 0;
+      }
+
+      &--accent {
+        border: 2px solid $accent-color;
+        padding: 7px;
+        cursor: pointer;
+
+        .nav__link {
+          &:hover {
+            border: 0;
+          }
+        }
+
+        &:hover {
+          background-color: $accent-color;
+          transition: 300ms;
+        }
+      }
+    }
+  }
+
+  &__social{
+    font-size: 0;
+  }
+
+  &__icon{
+    font-size: 30px;
+  }
+}

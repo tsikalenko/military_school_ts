@@ -1,0 +1,18 @@
+@import "./src/utils/styles/mixins";
+@import "./src/utils/styles/colors";
+
+.price-modal{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: $bg-main-color-transparent;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+
+  @include flex();
+
+  &__form{
+    //w100
+  }
+}

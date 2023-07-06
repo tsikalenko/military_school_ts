@@ -1,0 +1,209 @@
+@import "./src/utils/styles/mixins";
+@import "colors";
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+
+  &--app {
+    flex-grow: 1;
+  }
+
+  &--page {
+    width: 100%;
+    color: $main-color;
+    margin: 120px 0 50px;
+    @include flex($dir: column);
+
+    @include respond(tablet) {
+      margin-top: 167px;
+    }
+
+    @include respond(laptop) {
+      margin-top: 100px;
+    }
+  }
+
+  &--color {
+    width: 100%;
+    color: $main-color;
+    margin: 120px 0 50px;
+
+    @include respond(tablet) {
+      margin-top: 167px;
+    }
+  }
+}
+
+.app {
+  min-height: 100vh;
+  @include flex($dir: column, $justify: space-between);
+  background: $bg-main-color top/200% no-repeat;
+  position: relative;
+
+  @include respond(laptop) {
+    background: $bg-main-color top/100% no-repeat;
+  }
+}
+
+.button {
+  font-size: 18px;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  padding: 15px 0;
+  margin: 20px 20px;
+  width: calc(100% - 40px);
+  border: 2px solid transparent;
+
+  @include respond(tablet) {
+    width: 30%;
+    display: inline-block;
+  }
+
+  &--border {
+    border: 2px solid $main-color;
+
+    &:hover {
+      background-color: $accent-color;
+      transition: 300ms;
+    }
+  }
+
+  &--accent {
+    background-color: $accent-color;
+    color: $secondary-color;
+
+    &:hover {
+      border: 2px solid $main-color;
+      transition: 300ms;
+    }
+  }
+
+  &--center {
+    margin: 20px auto;
+    @include respond(tablet) {
+      margin: 20px 35%;
+    }
+  }
+
+  &--fifteen {
+    width: 80%;
+    margin: 20px 10%;
+    @include respond(tablet) {
+      width: 50%;
+      margin: 20px 25%;
+    }
+  }
+
+  &--eighteen {
+    width: 80%;
+    margin: 20px 10%;
+    @include respond(tablet) {
+      width: 80%;
+      margin: 20px 10%;
+    }
+  }
+
+  &--sm {
+    padding: 5px 0;
+  }
+}
+
+.accent {
+  color: $accent-color;
+}
+
+.viber-violet {
+  color: $viber-color;
+}
+
+.tg-blue {
+  color: $tg-color;
+}
+
+.inst-pink {
+  color: $inst-color;
+}
+
+.facebook-blue {
+  color: $facebook-color;
+}
+
+.secondary {
+  color: $secondary-text-color;
+}
+
+.light-color {
+  color: $light-text-color;
+}
+
+.attention {
+  color: $attention;
+}
+
+.error, .loading {
+  color: $main-color;
+  margin: 120px 0 50px;
+  font-size: 30px;
+  text-align: center;
+
+  @include respond(tablet) {
+    margin: 167px 0 50px;
+  }
+
+  @include respond(laptop) {
+    margin: 250px 0 50px;
+  }
+
+  &--sm {
+    margin-top: 50px;
+  }
+}
+
+.title {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 50px 0;
+  letter-spacing: 2px;
+  text-align: center;
+
+  &--sm {
+    font-size: 25px;
+    @include respond(tablet) {
+      font-size: 40px;
+    }
+  ;
+  }
+}
+
+.subtitle {
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+}
+
+.pre-wrap {
+  white-space: pre-wrap;
+}
+
+.line {
+  margin: 10px auto 30px;
+  display: block;
+  height: 2px;
+  width: 50%;
+  background-color: $main-color;
+  @include respond(laptop) {
+    width: 25%;
+  }
+}

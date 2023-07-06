@@ -1,0 +1,58 @@
+@import "./src/utils/styles/mixins";
+@import "./src/utils/styles/colors";
+
+.team-building {
+  margin: 80px 0 50px;
+  padding: 0 20px;
+  width: 100%;
+  color: $main-color;
+
+  @include respond(tablet) {
+    margin: 117px 0 50px;
+  }
+  @include respond(laptop) {
+    margin: 200px 0 50px;
+  }
+
+  &__title {
+    font-weight: 700;
+    text-align: center;
+    margin-top: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 30px;
+
+    @include respond(laptop) {
+      font-size: 40px;
+    }
+  }
+
+  &__header {
+    @include respond(laptop) {
+      @include flex()
+    }
+  }
+
+  &__info {
+    @include respond(laptop) {
+      margin-left: 30px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  &__text {
+    margin: 20px 0;
+  }
+
+  &__form {
+    margin-top: 80px;
+    text-align: center;
+  }
+}

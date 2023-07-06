@@ -1,0 +1,31 @@
+@import "./src/utils/styles/colors";
+@import "./src/utils/styles/mixins";
+
+.mainInfo {
+  margin-top: 20px;
+  padding: 0 20px;
+
+  @include respond(laptop) {
+    margin-left: 50px;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    @include respond(tablet) {
+      text-align: left;
+      margin-left: 30px;
+    }
+  }
+}

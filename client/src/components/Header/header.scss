@@ -1,0 +1,185 @@
+@import "./src/utils/styles/mixins";
+@import "./src/utils/styles/colors";
+
+.header {
+  background: rgba(0, 0, 0, 0.9);
+  color: $main-color;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+
+  &__container {
+    padding: 5px 20px !important;
+    @include flex($justify: space-between);
+  }
+
+  &__burger {
+    font-size: 0;
+  }
+
+  &__img {
+    font-size: 25px;
+    color: $accent-color;
+
+    @include respond(tablet) {
+      font-size: 40px;
+    }
+    @include respond(laptop) {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-size: 0;
+  }
+
+  &__logo {
+    height: 70px;
+    width: 100px;
+    @include respond(tablet) {
+      height: 107px;
+      width: 150px;
+    }
+    @include respond(laptop) {
+      height: 70px;
+      width: 100px;
+    }
+  }
+
+  &__registration {
+    &--text {
+      display: none;
+      @include respond(laptop) {
+        display: block;
+      }
+    }
+
+    &--img {
+      font-size: 25px;
+      color: $accent-color;
+
+      @include respond(tablet) {
+        font-size: 40px;
+      }
+      @include respond(laptop) {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    @include respond(laptop) {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 10px;
+      border: 2px solid $accent-color;
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:hover {
+        background-color: $accent-color;
+        transition: 300ms;
+      }
+
+
+    }
+  }
+
+  &__buttons {
+    @include flex();
+  }
+
+  .nav {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    @include flex($dir: column);
+
+    &--close {
+      display: none;
+    }
+
+    @include respond(tablet) {
+      top: 117px;
+    }
+
+    @include respond(laptop) {
+      @include flex();
+      position: static;
+      background: none;
+      width: auto;
+      &--close {
+        display: flex;
+      }
+    }
+
+    &__link {
+      &:hover {
+        border-bottom: 2px solid $accent-color;
+      }
+    }
+
+    &__item {
+      margin: 8px 0;
+
+      @include respond(laptop) {
+        margin: 0 20px;
+      }
+
+      &--mobile {
+        @include respond(laptop) {
+          display: none;
+        }
+      }
+
+      &--colored {
+        color: $accent-color;
+      }
+
+      &--special {
+        @include flex($align: center);
+        @include respond(laptop) {
+          display: none;
+        }
+      }
+
+      &:first-child {
+        margin-top: 20px;
+        @include respond(laptop){
+          margin-top: 0;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 20px;
+        @include respond(laptop){
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &__social {
+      font-size: 0;
+    }
+
+    &__icon {
+      font-size: 20px;
+      margin: 5px;
+
+      &--accent {
+        color: $accent-color;
+      }
+    }
+  }
+}

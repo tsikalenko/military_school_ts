@@ -1,0 +1,40 @@
+@import "./src/utils/styles/mixins";
+
+.gratitude {
+  width: 100%;
+  padding: 0 20px;
+  color: $main-color;
+  margin: 80px 0 50px;
+  @include flex($dir: column);
+
+  @include respond(tablet) {
+    margin-top: 117px;
+  }
+
+  @include respond(laptop) {
+    margin-top: 200px;
+  }
+
+  &__link {
+    text-align: center;
+  }
+
+  &__title {
+    font-weight: 700;
+    text-align: center;
+    margin: 50px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 30px;
+
+    @include respond(laptop) {
+      font-size: 40px;
+    }
+  }
+
+  &__content {
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+  }
+}

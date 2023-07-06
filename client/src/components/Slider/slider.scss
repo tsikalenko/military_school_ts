@@ -1,0 +1,42 @@
+@import "./src/utils/styles/colors";
+@import "./src/utils/styles/mixins";
+
+.slider {
+  margin: 50px 0;
+  position: relative;
+  width: 100%;
+
+  @include respond(tablet) {
+    margin: 70px auto;
+    max-width: 600px;
+  }
+
+  @include respond(laptop) {
+    margin: 70px auto;
+  }
+
+  @include green-bg();
+
+  &__img {
+    width: 100%;
+  }
+}
+
+.swiper-button-prev {
+  color: $accent-color
+}
+
+.swiper-button-next {
+  color: $accent-color;
+}
+
+.swiper-pagination-bullet {
+  opacity: 0.6;
+  border: 1px solid $main-color;
+  height: 10px;
+  width: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $accent-color;
+}
